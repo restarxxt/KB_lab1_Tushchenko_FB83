@@ -12,6 +12,10 @@ class SteeringWheel():
 		self.MinSWLevel = 70
 		self.Direction = "forward"
 
+	def Requirements(self):
+		self.id = "4.3 / 4.4"
+		self.material = "metal"
+
 	def SetSWLevel(self):
 		self.SteeringWheelLevel = int(input("Set new height (70-130): "))
 		if self.SteeringWheelLevel < 70:
@@ -51,6 +55,11 @@ class Deck():
 	def __init__(self):
 		self.state = True
 
+	def Requirements(self):
+		self.id = "4.1"
+		self.material = "metal"
+		self.size = "23x52cm"
+
 	def SetState(self):
 		if self.state:
 			print("Do you want to remove the deck? (1. Yes 2. No)")
@@ -83,6 +92,10 @@ class Deck():
 class Step():
 	def __init__(self):
 		self.state = True
+
+	def Requirements(self):
+		self.id = "4.2"
+		self.material = "metal"
 
 	def SetState(self):
 		if self.state:
@@ -122,6 +135,11 @@ class Engine():
 		self.IsOn = False
 		self.EngineTurns = False
 
+	def Requirements(self):
+		self.id = "1.4"
+		self.capacity = "350w"
+		self.max_capacity = "600w"
+
 	def SetState(self):
 		if self.IsOn:
 			self.IsOn = False
@@ -144,6 +162,11 @@ class Engine():
 class Battery():
 	def __init__(self):
 		self.BatteryLevel = random.randrange(30,100)
+
+	def Requirements(self):
+		self.id = "1.2"
+		self.capacity = "12400mAh"
+		self.charging_time = "10h"
 
 	def ChargeBattery(self):
 		print(Fore.GREEN + 'Charging engine')
@@ -220,6 +243,11 @@ class Throttle():
 		self.Kind = ""
 		self.PressedState = False
 
+	def Requirements(self):
+		self.id = "5.1 / 5.2"
+		self.material = "plastic"
+		self.connection = "cabel"
+
 	def SetState(self):
 		if self.PressedState:
 			self.PressedState = False
@@ -264,6 +292,10 @@ class Throttle():
 class BackBreak():
 	def __init__(self):
 		self.PressedState = False
+
+	def Requirements(self):
+		self.id = "5.3"
+		self.material = "metal"
 
 	def SetState(self):
 		if self.PressedState:
@@ -377,6 +409,11 @@ class RearWheel():
 	def __init__(self):
 		self.State = False
 
+	def Requirements(self):
+		self.id = "3.2"
+		self.diametr = '10"'
+		self.material = "polyuretan"
+
 	def SetState(self):
 		if self.State:
 			#print("Rear wheel is not in movement.")
@@ -400,6 +437,11 @@ class FrontWheel():
 	def __init__(self):
 		self.State = False
 		self.Direction = "forward"
+
+	def Requirements():
+		self.id = "3.2"
+		self.diametr = '10"'
+		self.material = "polyuretan"
 
 	def SetDirection(self, param, type):
 		self.Direction = param
@@ -538,6 +580,13 @@ class Direction():
 class Display():
 	def __init__(self):
 		self.Display = False
+
+	def Requirementrs(self):
+		self.id = "2.1"
+		self.ci_id = "2.2"
+		self.type = 'LED'
+		self.density = "300ppi"
+		self.ci_type = "lightdiod"
 
 	def DisplayOn(self):
 		print(Fore.GREEN + 'Display downloaded.')
